@@ -1,0 +1,135 @@
+.premiere-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Faqat umumiy kattalashtirildi */
+  margin: 0 auto 40px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+}
+
+.carousel-movie-card {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 480px; /* Kattalashtirildi */
+  display: flex;
+  align-items: flex-end;
+  background: #181c24;
+}
+
+.carousel-movie-img {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.7);
+  transition: filter 0.3s;
+}
+
+.carousel-movie-card:hover .carousel-movie-img {
+  filter: brightness(0.9);
+}
+
+.carousel-movie-info {
+  position: relative;
+  z-index: 2;
+  padding: 24px 36px 60px 36px; /* pastki padding oshirildi */
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(24,28,36,0.95) 60%, rgba(24,28,36,0.2) 100%);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.carousel-movie-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #ffd93d;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.carousel-movie-overview {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 10px; /* Yana pastroqqa tushirildi */
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  padding: 0 24px;
+  gap: 32px;
+}
+
+.carousel-arrow {
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: #ffd93d;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px;
+}
+
+.carousel-arrow:hover {
+  background: #ffb400;
+  color: #181c24;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #b8b8b8;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  border: 2px solid transparent;
+}
+
+.carousel-dot.active {
+  background: #ffb400;
+  opacity: 1;
+  border: 2px solid #ffd93d;
+}
+
+@media (max-width: 900px) {
+  .premiere-carousel {
+    max-width: 98vw;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .carousel-movie-card {
+    height: 220px;
+  }
+  .carousel-movie-info {
+    padding: 18px 16px 14px 16px;
+  }
+  .carousel-movie-title {
+    font-size: 1.2rem;
+  }
+} 
